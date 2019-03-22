@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>人事档案</title>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+    <link href="css/style9.css" rel="stylesheet">
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+    <header class="app-header navbar">
+        <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">☰</button>
+        <a class="navbar-brand" href="#"></a>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item hidden-md-down"  style="color: #fff;">
+               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
+                    欢迎您，刘兆强【市局管理员】
+                    <img src="img/avatars/6.png" class="img-avatar" alt="admin@bootstrapmaster.com">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <div class="dropdown-header text-center">
+                        <strong>Account</strong>
+                    </div>
+                    <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span class="badge badge-info">42</span></a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span class="badge badge-success">42</span></a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span class="badge badge-danger">42</span></a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comments<span class="badge badge-warning">42</span></a>
+
+                    <div class="dropdown-header text-center">
+                        <strong>Settings</strong>
+                    </div>
+                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="badge badge-default">42</span></a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
+                    <div class="divider"></div>
+                    <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+                </div>
+            </li>
+            <li class="nav-item hidden-md-down">
+               &nbsp
+            </li>
+        </ul>
+    </header>
+    <div class="app-body">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                 <ul class="nav" style="font-size: 15px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><img style="margin-right: 10px;" src="img/sy.png">首页</a>
+                    </li>
+                    <li class="nav-item nav-dropdown open">
+                        <a class="nav-link" href="rsda.html"><img style="margin-right: 10px;" src="img/rsda.png">人事档案<i><img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="zwjs.html"><img style="margin-right: 10px;" src="img/zwjs.png">职位晋升<i><img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="sbgl.html"><img style="margin-right: 10px;" src="img/sbgl.png">社保管理<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="xcgl.html"><img style="margin-right: 10px;" src="img/xcgl.png">薪酬管理<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rck.html"><!-- <i class="icon-pie-chart"></i> --><img style="margin-right: 10px;" src="img/rck.png">人才库<img src="img/jt.png" class="nav-dropdown-togglee" style="margin-left: 69px;"></i></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-title">
+                        <hr>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="sjfx.html"><img style="margin-right: 10px;" src="img/sjfx.png">数据分析<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="rzgl.html"><img style="margin-right: 10px;" src="img/rzgl.png">日志管理<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle nav-dropdown-toggleee" href="#"><img style="margin-right: 10px;" src="img/xtsz.png">系统设置</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="bmgl.html" target="_top"><i class="icon-star"></i>部门管理</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tcgl.html" target="_top"><i class="icon-star"></i>特长管理</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="yhgl.html" target="_top"><i class="icon-star"></i>用户管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <main class="main">
+            <ol class="breadcrumb">
+                <!-- <li class="breadcrumb-item">Home</li> -->
+                <li class="breadcrumb-item"><a href="#">人员详情</a>
+                </li>
+            </ol>
+            <div class="container-fluid">
+                <div class="animated fadeIn">
+                        </div>
+                        <div class="col-sm-6a">     
+                    </div>
+                       <div class="col-sm-6a">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>基本信息</strong> 
+                                </div>
+                                <div class="card-block">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">姓名</label>
+                                                <input type="text" class="form-control" id="cvv" placeholder="输入姓名">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccmonth">性别</label>
+                                            <select class="form-control" id="ccmonth">
+                                                <option>选择</option>
+                                                <option>女</option>                                           
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">出生日期</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">民族</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>汉族</option>
+                                                <option>壮族</option>
+                                                <option>满足</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">政治面貌</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>党员</option>
+                                                <option>群众</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">身份证号</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">手机号</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+                                         <div class="form-group col-sm-4">
+                                            <label for="ccyear">婚姻状态</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>未婚</option>
+                                                <option>已婚</option>
+                                                <option>离异</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">学历</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>大专</option>
+                                                <option>高中</option>
+                                                <option>本科</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">毕业院校</label>
+                                                <input type="text" class="form-control" id="cvv" placeholder="输入姓名">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">是否全日制</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>全日制</option>
+                                                <option>非全日制</option>
+                                            </select>
+                                        </div>
+                                         <div class="form-group col-sm-4">
+                                            <label for="ccyear">籍贯</label>
+                                            <input type="text" class="form-control" id="cvv" placeholder="">
+                                        </div>
+                                    <div class="form-group col-sm-4">
+                                            <label for="ccyear">现住址</label>
+                                            <input type="text" class="form-control" id="cvv" placeholder="">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                            <label for="ccyear">是否退伍军人</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>是</option>
+                                                <option>否</option>   
+                                            </select>
+                                        </div>
+                                    <div class="form-group col-sm-4">
+                                            <label for="ccyear">部门</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>交通警察支队</option>
+                                                <option>办公室</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">职位</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>队员</option>
+                                                <option>队长</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">辅警等级</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>实习辅警</option>
+                                                <option>六级辅警</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">任职区域</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>桥西区</option>
+                                                <option>裕华区</option>
+                                            </select>
+                                        </div>  
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="ccnumber">备注</label>
+                                                <textarea type="text" class="form-control" id="ccnumber" placeholder="" style="height: 200px;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>家庭成员</strong>
+                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">删除</button>
+                                </div>
+                                <div class="card-block">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">与本人关系</label>
+                                                <select class="form-control" id="ccyear">
+                                                <option>父亲</option>
+                                                <option>母亲</option>
+                                                <option>子女</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">姓名</label>
+                                                <input type="text" class="form-control" id="cvv" placeholder="输入姓名">
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">出生日期</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">工作单位</label>
+                                            <input type="text" class="form-control" id="cvv" placeholder="输入姓名">
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">民族</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>汉族</option>
+                                                <option>壮族</option>
+                                                <option>满足</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">政治面貌</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>党员</option>
+                                                <option>群众</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">身份证号</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">手机号</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+          
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>家庭成员</strong>
+                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">删除</button>
+                                </div>
+                                <div class="card-block">
+                                 
+                                  
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">与本人关系</label>
+                                                <select class="form-control" id="ccyear">
+                                                <option>父亲</option>
+                                                <option>母亲</option>
+                                                <option>子女</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">姓名</label>
+                                                <input type="text" class="form-control" id="cvv" placeholder="输入姓名">
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">出生日期</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">工作单位</label>
+                                            <input type="text" class="form-control" id="cvv" placeholder="输入姓名">
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">民族</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>汉族</option>
+                                                <option>壮族</option>
+                                                <option>满足</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">政治面貌</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>党员</option>
+                                                <option>群众</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">身份证号</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">手机号</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+          
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>特长</strong>
+                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">添加特长介绍</button>
+                                    
+                                </div>
+                                <div class="card-block">
+                                   
+
+
+                                   <div class="form-group row">
+
+
+                                           
+                                            <div class="col-md-9" style="flex: 0 0 90%;
+                                          max-width: 90%; margin-left: 30px; padding-top: 15px;">
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">退伍军人
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">团队管理
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox1" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox1" name="inline-checkbox1" value="option1">播音主持
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox2" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox2" name="inline-checkbox2" value="option2">诗歌朗诵
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">计算机程序
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">电脑硬件
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 25px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">日常锻炼
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">才艺表演
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">绘画
+                                                </label>
+                                                 <label class="checkbox-inline" for="inline-checkbox3" style="margin-right:45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">熟练掌握办公软件
+                                                </label>
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">责任心强，工作细心
+                                                </label>
+                                                
+                                                
+                                                <label class="checkbox-inline" for="inline-checkbox3" style="margin-right: 45px;">
+                                                    <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3">擅长快跑
+                                                </label>
+
+                                            <div class="form-group" style="padding-top: 30px;">
+                                                <label for="ccnumber">特长介绍</label>
+                                                <input type="text" class="form-control" id="ccnumber" placeholder="输入特长详情" style="width: 90%">
+                                            </div>
+                                            <div class="form-group" style="padding-top: 15px">
+                                                <label for="ccnumber">特长介绍</label>
+                                                <input type="text" class="form-control" id="ccnumber" placeholder="输入特长详情" style="width: 90%">
+                                            </div>
+                                               
+                                            </div>
+                                        </div>
+                                 
+
+
+
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>工作经历<strong>
+                                        <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">编辑</button>
+                                </strong></strong></div><strong><strong>
+                                <div class="card-block">
+                                   
+                                     <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                               
+                                                <textarea type="text" class="form-control" id="ccnumber" placeholder="输入工作经历" style="height: 200px;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </strong></strong></div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>奖惩记录<strong>
+                                         <div style="float: right;">
+                                       
+                                    <button type="submit" class="btn btn-sm btn-primary" style=" background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; ">奖励</button>
+                                    <button type="submit" class="btn btn-sm btn-primary" style=" background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; ">惩罚</button>
+                                    </div>
+                                </strong></strong></div><strong><strong>
+                                <div class="card-block">
+                                   
+                                     <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                               
+                                                <textarea type="text" class="form-control" id="ccnumber" placeholder="输入工作经历" style="height: 200px;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </strong></strong></div>
+
+                            <div class="form-actions" style="margin-bottom: 30px; float: right;">
+                            <button type="submit" class="btn btn-primary" onclick="window.location.href='#'">确定</button>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+       
+        </div>
+    <footer class="app-footer">
+         <div style="text-align: center;">
+        <a href="#">版权所有：石家庄市公安局</a>
+        </div>
+        
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/pace/pace.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>

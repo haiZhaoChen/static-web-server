@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>数据分析</title>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/echarts.min.js"></script>
+
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+    <header class="app-header navbar">
+        <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">☰</button>
+        <a class="navbar-brand" href="#"></a>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item hidden-md-down"  style="color: #fff;">
+               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
+                    欢迎您，刘兆强【市局管理员】
+                    <img src="img/avatars/6.png" class="img-avatar" alt="admin@bootstrapmaster.com">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <div class="dropdown-header text-center">
+                        <strong>Account</strong>
+                    </div>
+                    <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span class="badge badge-info">42</span></a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span class="badge badge-success">42</span></a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span class="badge badge-danger">42</span></a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comments<span class="badge badge-warning">42</span></a>
+
+                    <div class="dropdown-header text-center">
+                        <strong>Settings</strong>
+                    </div>
+
+                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="badge badge-default">42</span></a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
+                    <div class="divider"></div>
+                    <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+                </div>
+            </li>
+            <li class="nav-item hidden-md-down">
+               &nbsp
+            </li>
+
+        </ul>
+    </header>
+
+    <div class="app-body">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+               <ul class="nav" style="font-size: 15px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><img style="margin-right: 10px;" src="img/sy.png">首页</a>
+                    </li>
+
+                   
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="rsda.html"><img style="margin-right: 10px;" src="img/rsda.png">人事档案<i><img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="zwjs.html"><img style="margin-right: 10px;" src="img/zwjs.png">职位晋升<i><img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                       
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="sbgl.html"><img style="margin-right: 10px;" src="img/sbgl.png">社保管理<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="xcgl.html"><img style="margin-right: 10px;" src="img/xcgl.png">薪酬管理<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rck.html"><!-- <i class="icon-pie-chart"></i> --><img style="margin-right: 10px;" src="img/rck.png">人才库<img src="img/jt.png" class="nav-dropdown-togglee" style="margin-left: 69px;"></i></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-title">
+                        <hr>
+                    </li>
+                    <li class="nav-item nav-dropdown open">
+                        <a class="nav-link" href="sjfx.html"><img style="margin-right: 10px;" src="img/sjfx.png">数据分析<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                        
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="rzgl.html"><img style="margin-right: 10px;" src="img/rzgl.png">日志管理<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle nav-dropdown-toggleee" href="#"><img style="margin-right: 10px;" src="img/xtsz.png">系统设置</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="bmgl.html" target="_top"><i class="icon-star"></i>部门管理</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tcgl.html" target="_top"><i class="icon-star"></i>特长管理</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="yhgl.html" target="_top"><i class="icon-star"></i>用户管理</a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+        <main class="main">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="sjfx.html">数据分析-1</a></li>
+                <li class="breadcrumb-item">数据分析-2</li>
+                <li class="breadcrumb-item"><a href="sjfx3.html">数据分析-3</a></li>
+            </ol>
+
+
+            <div class="container-fluid">
+                <div class="animated fadeIn">
+                        </div>
+
+ <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-align-justify"></i>搜索
+                                </div>
+                                <div class="card-block">
+                             <form action="" method="post" class="form-inline">
+                                       <div class="form-group" style="margin-right:50px;" >
+                                            <label for=" exampleinputemail2"="">任职区域
+                                            <select class="form-control" id="ccmonth" style="margin-left: 5px;">
+                                                <option >市区</option>
+                                                <option selected>新华区</option>
+                                                <option>裕华区</option>
+                                                <option>桥西区</option>
+                                                <option>长安区</option>
+                                               
+                                            </select>
+                                        </div>
+                                       
+                                     
+                                      
+                                      <button type="submit" class="btn btn-sm btn-primary" style="padding: 7px 10px; margin-right: 10px;">退伍军人&nbsp<i class="iconx-close"></i>
+                                       </button>
+                                       <button type="reset" class="btn btn-sm btn-success" style="padding: 7px 10px; margin-right: 10px;">政治面貌&nbsp<i class="iconx-close"></i></button>
+                                       <button type="reset" class="btn btn-sm btn-info" style="padding: 7px 10px; margin-right: 10px; background-color: #c23531; border: 1px #c23531;">性别占比&nbsp<i class="iconx-close"></i></button>
+                                       <button type="reset" class="btn btn-sm btn-warning" style="background-color: #f87400; border: 0; padding: 7px 10px; margin-right: 10px;">辅警等级&nbsp<i class="iconx-close"></i></button>
+                                        <div class="form-group" style="margin-right:50px; margin-left: 10px;">
+                                            <label for=" exampleinputemail2"="">添加统计项目
+                                            <select class="form-control" id="ccmonth" style="margin-left: 5px;">
+                                                <option>选择统计项目</option>
+                                               
+                                               
+                                            </select><button style="height: 35px; width: 60px; margin-left: 5px;">添加</button>
+                                        </div>
+                                   </form>
+                        </div>
+                            </div>
+                        </div>
+
+                        <div class="animated fadeIn">
+                    <div class="card-columns cols-2" style="padding:0 15px 5px 15px;">
+                          <div class="card">
+                            <div class="card-header">
+                                退伍军人占比
+                                <div class="card-actions">
+                                    
+                                </div>
+                            </div>
+                            <div class="card-block" style="height: 300px;">
+                                 <div id="twjr" style="width: 96%;height:300px;"></div>
+           <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('twjr'));
+        var 
+        option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    color:['#33c9db', '#3798db'],
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['退伍军人','非退伍军人']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            selectedMode: 'single',
+            radius: [0, '30%'],
+
+            label: {
+                normal: {
+                    position: 'inner'
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            
+        },
+        {
+            name:'数量与占比',
+            type:'pie',
+            radius: ['40%', '55%'],
+            label: {
+                normal: {
+                    formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                    backgroundColor: '#eee',
+                    borderColor: '#aaa',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    // shadowBlur:3,
+                    // shadowOffsetX: 2,
+                    // shadowOffsetY: 2,
+                    // shadowColor: '#999',
+                    // padding: [0, 7],
+                    rich: {
+                        a: {
+                            color: '#999',
+                            lineHeight: 22,
+                            align: 'center'
+                        },
+                        // abg: {
+                        //     backgroundColor: '#333',
+                        //     width: '100%',
+                        //     align: 'right',
+                        //     height: 22,
+                        //     borderRadius: [4, 4, 0, 0]
+                        // },
+                        hr: {
+                            borderColor: '#aaa',
+                            width: '100%',
+                            borderWidth: 0.5,
+                            height: 0
+                        },
+                        b: {
+                            fontSize: 16,
+                            lineHeight: 33
+                        },
+                        per: {
+                            color: '#eee',
+                            backgroundColor: '#334455',
+                            padding: [2, 4],
+                            borderRadius: 2
+                        }
+                    }
+                }
+            },
+            data:[
+                {value:512, name:'退伍军人'},
+                {value:950, name:'非退伍军人'}
+               
+            ]
+        }
+    ]
+};
+
+        myChart.setOption(option);
+    </script>
+                                
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                政治面貌
+                                <div class="card-actions">
+                                    <!-- <a href="http://www.chartjs.org">
+                                        <small style="color: #263238">折叠▲</small>
+                                    </a> -->
+                                </div>
+                            </div>
+                            <div class="card-block" style="height: 300px;">
+                                <div id="zzmm" style="width: 96%;height:300px;"></div>
+           <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('zzmm'));
+        var 
+        option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    color:['#59b66d', '#db7a37'],
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['党员','群众']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            selectedMode: 'single',
+            radius: [0, '30%'],
+
+            label: {
+                normal: {
+                    position: 'inner'
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            
+        },
+        {
+            name:'数量与占比',
+            type:'pie',
+            radius: ['40%', '55%'],
+            label: {
+                normal: {
+                    formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                    backgroundColor: '#eee',
+                    borderColor: '#aaa',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    // shadowBlur:3,
+                    // shadowOffsetX: 2,
+                    // shadowOffsetY: 2,
+                    // shadowColor: '#999',
+                    // padding: [0, 7],
+                    rich: {
+                        a: {
+                            color: '#999',
+                            lineHeight: 22,
+                            align: 'center'
+                        },
+                        // abg: {
+                        //     backgroundColor: '#333',
+                        //     width: '100%',
+                        //     align: 'right',
+                        //     height: 22,
+                        //     borderRadius: [4, 4, 0, 0]
+                        // },
+                        hr: {
+                            borderColor: '#aaa',
+                            width: '100%',
+                            borderWidth: 0.5,
+                            height: 0
+                        },
+                        b: {
+                            fontSize: 16,
+                            lineHeight: 33
+                        },
+                        per: {
+                            color: '#eee',
+                            backgroundColor: '#334455',
+                            padding: [2, 4],
+                            borderRadius: 2
+                        }
+                    }
+                }
+            },
+            data:[
+                {value:263, name:'党员'},
+                {value:1198, name:'群众'}
+               
+            ]
+        }
+    ]
+};
+
+        myChart.setOption(option);
+    </script>
+                            </div>
+                        </div>
+                     
+                        <div class="card">
+                            <div class="card-header">
+                                性别占比
+                                <div class="card-actions">
+                                </div>
+                            </div>
+                            <div class="card-block" style="height: 300px;">
+                                <div id="xbzb" style="width: 96%;height:300px;"></div>
+           <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('xbzb'));
+        var 
+        option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+
+    
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['女性','男性']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            selectedMode: 'single',
+            radius: [0, '30%'],
+
+            label: {
+                normal: {
+                    position: 'inner'
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            
+        },
+        {
+            name:'数量与占比',
+            type:'pie',
+            radius: ['40%', '55%'],
+            label: {
+                normal: {
+                    formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                    backgroundColor: '#eee',
+                    borderColor: '#aaa',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    // shadowBlur:3,
+                    // shadowOffsetX: 2,
+                    // shadowOffsetY: 2,
+                    // shadowColor: '#999',
+                    // padding: [0, 7],
+                    rich: {
+                        a: {
+                            color: '#999',
+                            lineHeight: 22,
+                            align: 'center'
+                        },
+                        // abg: {
+                        //     backgroundColor: '#333',
+                        //     width: '100%',
+                        //     align: 'right',
+                        //     height: 22,
+                        //     borderRadius: [4, 4, 0, 0]
+                        // },
+                        hr: {
+                            borderColor: '#aaa',
+                            width: '100%',
+                            borderWidth: 0.5,
+                            height: 0
+                        },
+                        b: {
+                            fontSize: 16,
+                            lineHeight: 33
+                        },
+                        per: {
+                            color: '#eee',
+                            backgroundColor: '#334455',
+                            padding: [2, 4],
+                            borderRadius: 2
+                        }
+                    }
+                }
+            },
+            data:[
+                {value:657, name:'女性'},
+                {value:804, name:'男性'}
+               
+            ]
+        }
+    ]
+};
+
+        myChart.setOption(option);
+    </script>
+                            </div>
+                        </div>
+                    
+                        <div class="card">
+                            <div class="card-header">
+                                辅警等级
+                            </div>
+                            <div class="card-block" style="height: 300px;">
+
+                                 <div id="fjdj" style="width: 96%;height:250px;"></div>
+           <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('fjdj'));
+        var 
+        option = {
+    color: ['#f2d222'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+      legend: {
+          top: '0%',
+          right: '0%',
+        data: ['格式不规范']
+    },
+    grid: {
+        left: '0%',
+        right: '0%',
+        bottom: '0%',
+        top: '8%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['实习辅警', '六级辅警', '五级辅警', '四级辅警', '三级辅警', '二级辅警', '一级辅警'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+         {
+            name:'人员总量',
+            type:'bar',
+            stack: '广告',
+            barWidth: '70%',
+            label: {
+                  normal: {
+                      show: true,
+                      position: 'top',
+                      textStyle: {
+                      color: '#000'
+                      }
+                  }
+             },
+            color: ['#f87400'],
+            data:[910, 400, 310, 580, 450, 260, 220]
+        },
+        
+    ]
+
+    
+
+
+};
+
+        myChart.setOption(option);
+    </script>
+
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        
+                        </div>
+                    </div>
+                   
+                </div>
+
+            </div>
+           
+        </main>
+
+      
+        </div>
+    <footer class="app-footer">
+         <div style="text-align: center;">
+        <a href="#">版权所有：石家庄市公安局</a>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/pace/pace.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>

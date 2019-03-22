@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>石家庄市辅警管理系统-登录</title>
+<link href="css/css.css" rel="stylesheet">
+<script src="js/js.js"></script>
+<script src="js/12.js"></script>
+</head>
+<body>
+<div class="box">
+<div class="lr">
+ <div class="left">
+  <div style=" height:1px; width:100%;"></div>
+  <div class="litbox">
+    <div class="let">
+    
+      <div style=" padding-left:137px; padding-top:151px;">
+      <div class="number"><input type="text" class="form-control" placeholder="请输入用户名"  style=" outline:none; width:320px"></div>
+      <div class="pass"><input type="password" class="form-control" placeholder="输入密码"   style=" outline:none; width:320px"></div>
+      </div>
+      
+      <div class="button">
+      <button class="bottonn" type="button" onclick="window.location.href='index.html'">登&nbsp;录</button>
+      </div>
+      
+</div> 
+</div>
+</div>
+
+</div></div>
+<div class="bottom">主管单位：石家庄市公安局<br>
+Administration:Shijiazhuang Public Security Bureau</div>
+</body>
+<script>
+
+function initPlaceHolders(){
+    if('placeholder' in document.createElement('input')){ //如果浏览器原生支持placeholder
+        return ;
+    }
+    function target (e){
+        var e=e||window.event;
+        return e.target||e.srcElement;
+    };
+    function _getEmptyHintEl(el){
+        var hintEl=el.hintEl;
+        return hintEl && g(hintEl);
+    };
+    function blurFn(e){
+        var el=target(e);
+        if(!el || el.tagName !='INPUT' && el.tagName !='TEXTAREA') return;//IE下，onfocusin会在div等元素触发 
+        var    emptyHintEl=el.__emptyHintEl;
+        if(emptyHintEl){
+            //clearTimeout(el.__placeholderTimer||0);
+            //el.__placeholderTimer=setTimeout(function(){//在360浏览器下，autocomplete会先blur再change
+                if(el.value) emptyHintEl.style.display='none';
+                else emptyHintEl.style.display='';
+            //},600);
+        }
+    };
+    function focusFn(e){
+        var el=target(e);
+        if(!el || el.tagName !='INPUT' && el.tagName !='TEXTAREA') return;//IE下，onfocusin会在div等元素触发 
+        var emptyHintEl=el.__emptyHintEl;
+        if(emptyHintEl){
+            //clearTimeout(el.__placeholderTimer||0);
+			emptyHintEl.style.display='none';
+        }
+    };
+    if(document.addEventListener){//ie
+        document.addEventListener('focus',focusFn, true);
+        document.addEventListener('blur', blurFn, true);
+    }
+    else{
+        document.attachEvent('onfocusin',focusFn);
+        document.attachEvent('onfocusout',blurFn);
+    }
+
+    var elss=[document.getElementsByTagName('input'),document.getElementsByTagName('textarea')];
+    for(var n=0;n<2;n++){
+        var els=elss[n];
+        for(var i =0;i<els.length;i++){
+            var el=els[i];
+            var placeholder=el.getAttribute('placeholder'),
+                emptyHintEl=el.__emptyHintEl;
+            if(placeholder && !emptyHintEl){
+                emptyHintEl=document.createElement('span');
+                emptyHintEl.innerHTML=placeholder;
+                emptyHintEl.className='emptyhint';
+                emptyHintEl.onclick=function (el){return function(){try{el.focus();}catch(ex){}}}(el);
+                if(el.value) emptyHintEl.style.display='none';
+                el.parentNode.insertBefore(emptyHintEl,el);
+                el.__emptyHintEl=emptyHintEl;
+            }
+        }
+    }
+}
+
+initPlaceHolders();
+</script>
+</html>
