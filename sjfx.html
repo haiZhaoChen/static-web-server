@@ -11,7 +11,19 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>数据分析</title>
+    <title>石家庄市辅警管理系统</title>
+    <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -24,7 +36,7 @@
         <a class="navbar-brand" href="#"></a>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item hidden-md-down"  style="color: #fff;">
-               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               <span id="mytime"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
@@ -145,21 +157,40 @@
                                                 <option>裕华区</option>
                                                 <option>桥西区</option>
                                                 <option>长安区</option>
+                                                <option>鹿泉区</option>
+                                                <option>栾城区</option>
+                                                <option>井陉矿区</option>
+                                                <option>藁城区</option>
                                                
                                             </select>
                                         </div>
-                                         <button type="submit" class="btn btn-sm btn-primary" style="padding: 7px 10px; margin-right: 10px;">人员总量&nbsp<i class="iconx-close"></i>
+                                         <button type="reset" class="btn btn-sm btn-primary" style="padding: 7px 10px; margin-right: 10px;">人员总量&nbsp<i class="iconx-close"></i>
                                        </button>
-                                       <button type="reset" class="btn btn-sm btn-success" style="padding: 7px 10px; margin-right: 10px;">学历占比&nbsp<i class="iconx-close"></i></button>
-                                       <button type="reset" class="btn btn-sm btn-info" style="padding: 7px 10px; margin-right: 10px;">年龄占比&nbsp<i class="iconx-close"></i></button>
-                                       <button type="reset" class="btn btn-sm btn-warning" style="background-color: #f87400; border: 0; padding: 7px 10px; margin-right: 10px;">工龄占比&nbsp<i class="iconx-close"></i></button>
+                                       <button type="reset" class="btn btn-sm btn-success" style="padding: 7px 10px; margin-right: 10px;">学历统计&nbsp<i class="iconx-close"></i></button>
+                                       <button type="reset" class="btn btn-sm btn-info" style="padding: 7px 10px; margin-right: 10px;">年龄统计&nbsp<i class="iconx-close"></i></button>
+                                       <button type="reset" class="btn btn-sm btn-warning" style="background-color: #f87400; border: 0; padding: 7px 10px; margin-right: 10px;">工龄统计&nbsp<i class="iconx-close"></i></button>
                                         <div class="form-group" style="margin-right:50px; margin-left: 10px;">
                                             <label for=" exampleinputemail2"="">添加统计项目
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
                                                 <option>选择统计项目</option>
+                                                <option>人员总量</option>
+                                                <option>学历统计</option>
+                                                <option>年龄统计</option>
+                                                <option>工龄统计</option>
+                                                <option>退伍军人占比</option>
+                                                <option>政治面貌</option>
+                                                <option>性别占比</option>
+                                                <option>辅警等级</option>
+                                                <option>部门人数占比</option>
+                                                <option>特长人数</option>
+                                                <option>各区人数</option>
+                                                <option>人员增减</option>
+                                                <option>人员表彰排名</option>
+                                                <option>各区表彰总排名</option>
+                                                    
                                                
                                                
-                                            </select><button style="height: 35px; width: 60px; margin-left: 5px;">添加</button>
+                                            </select><button type="reset" style="height: 35px; width: 60px; margin-left: 5px;">添加</button>
                                         </div>
                                        
                                       
@@ -174,6 +205,14 @@
                           <div class="card">
                             <div class="card-header">
                                 人员总量
+                                <div style="float: right;">
+                                        <label style="margin: 0;">时间选择
+                                            <input class="btn-primary" style="padding-left: 5px;  background-color: #fff; color: #000; border: 0; width: 90px; outline: none; " value="2018-06-15" >
+                                            <span style=" color: #999;">&nbsp;—</span>
+                                            <input class="btn-primary" style="padding-left: 5px;  background-color: #fff; color: #000; border: 0;  width: 90px; outline: none;" value="2019-02-15">
+                                            <span style="cursor:pointer;">&nbsp;确定</span>
+                                            
+                                        </div>
                                 <div class="card-actions">
                                     
                                 </div>
@@ -187,6 +226,7 @@
                                     color: ['#f2d222'],
                                     tooltip : {
                                         trigger: 'axis',
+                                        
         axisPointer : {            // 坐标轴指示器，坐标轴触发有效
             type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
         }
@@ -235,6 +275,7 @@ series : [
 
           show: true,
           position: 'top',
+
           textStyle: {
               color: '#000'
           }
@@ -284,7 +325,7 @@ myChart.setOption(option);
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                年龄占比
+                                年龄统计
                                 <div class="card-actions">
                                     
                                 </div>
@@ -362,7 +403,7 @@ myChart.setOption(option);
                      
                         <div class="card">
                             <div class="card-header">
-                                学历占比
+                                学历统计
                             </div>
                             <div class="card-block" style="height: 300px;">
                                 <div id="xlzb" style="width: 96%;height:250px;"></div>
@@ -375,7 +416,8 @@ myChart.setOption(option);
         trigger: 'axis',
         axisPointer : {            // 坐标轴指示器，坐标轴触发有效
             type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-        }
+        },
+      
     },
       legend: {
           top: '0%',
@@ -410,19 +452,23 @@ myChart.setOption(option);
             stack: '广告',
             barWidth: '70%',
             label: {
-                  normal: {
+            normal: {
                       show: true,
                       position: 'top',
                       textStyle: {
-                      color: '#000'
+                      color: '#000',
                       }
                   }
              },
             color: ['#4dbd74'],
+
             data:[670, 940, 970, 620, 420]
         },
         
     ]
+
+
+
 
     
 
@@ -437,12 +483,8 @@ myChart.setOption(option);
 
                         <div class="card">
                             <div class="card-header">
-                                工龄占比
-                                <!-- <div class="card-actions">
-                                    <a href="#">
-                                        <small class="text-muted">docs</small>
-                                    </a>
-                                </div> -->
+                                工龄统计
+                                
                             </div>
                             <div class="card-block" style="height: 300px;">
                                  <div id="glzb" style="width: 96%;height:250px;"></div>

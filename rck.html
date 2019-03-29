@@ -13,7 +13,19 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>人才库</title>
+    <title>石家庄市辅警管理系统</title>
+    <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -27,7 +39,7 @@
         <ul class="nav navbar-nav ml-auto">
           
             <li class="nav-item hidden-md-down"  style="color: #fff;">
-               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               <span id="mytime"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
@@ -135,7 +147,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <i class="fa fa-align-justify"></i>搜索
-                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">展开搜索项</button>
+                                    <!-- <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">展开搜索项</button> -->
                                 </div>
                                 <div class="card-block">
                              <form action="" method="post" class="form-inline">
@@ -161,20 +173,26 @@
                                             <input type="text" class="form-control" id="exampleInputName2" style="width: 50px;"><span style="color: #d9d9d9">&nbsp;—&nbsp; </span>
                                              <input type="text" class="form-control" id="exampleInputName2" style="width: 50px;">
                                         </div>
-                                       <button type="submit" class="btn btn-sm btn-primary" style="padding: 7px 10px; margin-right: 10px;">播音主持&nbsp<i class="iconx-close"></i>
+                                       <button type="reset" class="btn btn-sm btn-primary" style="padding: 7px 10px; margin-right: 10px;">播音主持&nbsp<i class="iconx-close"></i>
                                        </button>
                                        <button type="reset" class="btn btn-sm btn-success" style="padding: 7px 10px; margin-right: 10px;">退伍军人&nbsp<i class="iconx-close"></i></button>
                                        <button type="reset" class="btn btn-sm btn-info" style="padding: 7px 10px; margin-right: 10px;">软件程序&nbsp<i class="iconx-close"></i></button>
                                        <button type="reset" class="btn btn-sm btn-warning" style="background-color: #f87400; border: 0; padding: 7px 10px; margin-right: 10px;">团队管理&nbsp<i class="iconx-close"></i></button>
                                         <div class="form-group" style="margin-right:50px; margin-left: 10px;">
-                                            <label for=" exampleinputemail2"="">添加特长
+                                            <label for=" exampleinputemail2"="">特长
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
                                                 <option>选择</option>
                                                 <option>退伍军人</option>
+                                                <option>团队管理</option>
                                                 <option>播音主持</option>
+                                                <option>诗歌朗诵</option>
                                                 <option>软件程序</option>
+                                                <option>电脑硬件</option>
+                                                <option>才艺表演</option>
+                                                <option>绘画</option>
+                                                <option>擅长快跑</option>
                                                
-                                            </select><button style="height: 35px; width: 60px; margin-left: 5px;">添加</button>
+                                            </select><button type="reset"  style="height: 35px; width: 60px; margin-left: 5px;">确定</button>
                                         </div>
                                    </form>
                         </div>
@@ -185,7 +203,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <i class="fa fa-align-justify"></i> 人才库
-                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">添加成员</button>
+                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer" onclick="window.location.href='rcktj.html'">添加成员</button>
                                 </div>
                                 <div class="card-block">
                                     <table class="table table-bordered" style="text-align: center;">
@@ -222,8 +240,8 @@
                                         
                                                 </td>
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -243,8 +261,8 @@
                                                 
                                                
                                                 <td>
-                                                    <span class="badge badge-success" style="background-color: #1276e6;">详情</span>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -264,8 +282,8 @@
                                                 </td>
                                                 
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -284,8 +302,8 @@
                                                 </td>
                                                 
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -304,8 +322,8 @@
                                                 </td>
                                                 
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -325,8 +343,8 @@
                                                 </td>
                                                 
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -346,8 +364,8 @@
                                                 </td>
                                                 
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             
                                             <tr>
@@ -369,8 +387,8 @@
                                                 </td>
                                                 
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -389,8 +407,8 @@
                                                 </td>
                                                
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -409,8 +427,8 @@
                                                 </td>
                                                
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -428,10 +446,9 @@
                                          <button type="reset" class="btn btn-sm btn-warning" style="background-color: #f87400; border: 0;" >团队管理</button>
                                         
                                                 </td>
-                                                
                                                 <td>
-                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='xq.html'">详情</button>
+                                               </td>
                                             </tr>
                                         </tbody>
                                     </table>

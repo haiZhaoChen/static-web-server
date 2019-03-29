@@ -13,10 +13,35 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>人事档案</title>
+    <title>石家庄市辅警管理系统</title>
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="easyui.css" /> 
+    <script src="js/jquery.min.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/pace/pace.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript"  src="jquery.easyui.min.js"></script>
+
+
+    
+    <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
+    
 
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -26,7 +51,7 @@
         <ul class="nav navbar-nav ml-auto">
            
             <li class="nav-item hidden-md-down"  style="color: #fff;">
-               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               <span id="mytime"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
@@ -134,7 +159,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <i class="fa fa-align-justify"></i>搜索
-                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">展开搜索项</button>
+                                    <!-- <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">展开搜索项</button> -->
                                 </div>
                                 <div class="card-block">
                              <form action="" method="post" class="form-inline">
@@ -149,7 +174,12 @@
                                             <label for=" exampleinputemail2"="">所属部门</label>
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
                                                 <option>交通警察大队</option>
+                                                <option>治安管理大队</option>
                                                 <option>特巡警大队</option>
+                                                <option>行政服务部</option>
+                                                <option>经济保卫处</option>
+                                                <option>指挥中心</option>
+                                                <option>刑侦大队</option>
                                             </select>
                                         </div>
                                          <div class="form-group" style="margin-right:50px;" >
@@ -173,9 +203,11 @@
                                            <div class="form-group" style="margin-right:50px;" >
                                             <label for=" exampleinputemail2"="">学历
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
-                                                <option>本科</option>
-                                                <option>高中</option>
+                                                <option>博士</option>
+                                                <option>硕士</option>
+                                                <option selected>本科</option>
                                                 <option>大专</option>
+                                                <option>高中</option>
                                            </select>
                                         </div>
                                       
@@ -197,27 +229,38 @@
                                             <label for=" exampleinputemail2"="">任职区域
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
                                                 <option>选择</option>
+                                                <option>长安区</option>
                                                 <option>桥西区</option>
+                                                <option>新华区</option>
                                                 <option>裕华区</option>
+                                                <option>鹿泉区</option>
+                                                <option>井陉矿区</option>
+                                                <option>栾城区</option>
+                                                <option>藁城区</option>
                                             </select>
                                         </div>
                                           <div class="form-group" style="margin-right:50px; margin-top: 20px;"  >
                                             <label for=" exampleinputemail2"="">职位
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
                                                 <option>选择</option>
-                                                <option>班长</option>
+                                                <option>队员</option>
                                                 <option>组长</option>
+                                                <option>班长</option>
+                                                                             
                                             </select>
                                         </div>
                                           <div class="form-group" style="margin-right:50px;  margin-top: 20px;"  >
                                             <label for=" exampleinputemail2"="">辅警级别
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
-                                                <option>六级辅警</option>
+                                                <option>实习辅警</option>
+                                                <option selected>六级辅警</option>
                                                 <option>五级辅警</option>
+                                                <option>四级辅警</option>
+                                                <option>三级辅警</option>
+                                                <option>二级辅警</option>
+                                                <option>一级辅警</option>
                                             </select>
                                         </div>
-
-                                     
                                    </form>
                         </div>
                             </div>
@@ -232,11 +275,15 @@
                                             <select class="btn-primary" style="margin-left: 5px; background-color: #1276e6; background-color: #fff; color: #000; ">
                                                 <option>选择</option>
                                                 <option>删除</option>
-                                            </select><span>&nbsp确定
+                                            </select><span style="cursor:pointer;">&nbsp确定
                                                         
                                                     </span>&nbsp&nbsp&nbsp&nbsp&nbsp
-                                    <button type="submit" class="btn btn-sm btn-primary" style=" background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; ">批量导入</button>
-                                    <button type="submit" class="btn btn-sm btn-primary" style=" background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; ">导出</button>
+                                   <input type="button" value="excel批量导入" onclick="javascript:$('input[name=\'file\']').click();" />
+                                    <input type="file" name="file" style="display: none;" onchange="javascript:$('input[name=\'fileName\']').val(this.files[0].name);" />
+
+                                    <button type="submit"  type="file" class="btn btn-sm btn-primary" style=" background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; " onclick="daochu()">导出</button>
+
+                                   
                                     <button type="submit" class="btn btn-sm btn-primary" style="background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; " onclick="window.location.href='xz-jbxx.html'">新增</button>
                                     </div>
                                 </div>
@@ -276,7 +323,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>汉族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1988/12/05</td>
                                                 <td>2015/09/20</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -299,7 +346,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>汉族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1990/03/07</td>
                                                 <td>2016/11/20</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -322,7 +369,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>汉族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1992/07/12</td>
                                                 <td>2016/08/25</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -345,7 +392,7 @@
                                                 </td>
                                                 <td>群众</td>
                                                 <td>汉族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1989/03/20</td>
                                                 <td>2015/05/15</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -368,7 +415,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>汉族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1987/01/11</td>
                                                 <td>2016/11/16</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -391,7 +438,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>汉族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1989/06/09</td>
                                                 <td>2014/08/10</td>
                                                 <td>3年</td>
                                                 <td>大专</td>
@@ -414,7 +461,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>满族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1993/11/09</td>
                                                 <td>2015/09/22</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -438,7 +485,7 @@
                                                 </td>
                                                 <td>群众</td>
                                                 <td>汉族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1991/12/11</td>
                                                 <td>2016/08/23</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -460,7 +507,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>汉族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1989/01/14</td>
                                                 <td>2015/10/28</td>
                                                 <td>3年</td>
                                                 <td>大专</td>
@@ -483,7 +530,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>汉族</td>
-                                                <td>1989/10/05</td>
+                                                <td>1990/08/05</td>
                                                 <td>2015/09/22</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -506,7 +553,7 @@
                                                 </td>
                                                 <td>党员</td>
                                                 <td>壮族</td>
-                                                <td>1989/12/05</td>
+                                                <td>1987/03/07</td>
                                                 <td>2014/11/27</td>
                                                 <td>3年</td>
                                                 <td>本科</td>
@@ -546,6 +593,45 @@
 
         
         </div>
+
+
+        <!-- 弹框 -->
+        <div id="dialog_message" style="font-size: 18px;" ></div>
+        <!-- 弹框 -->
+
+<script>
+
+ function daochu(){
+  $("#dialog_message").html("");//内容先清空
+  var tableHtml = "<div class='jsanniu'><ul>";
+   tableHtml += "<li>确定将选中人员导出到excel？</li>";
+   tableHtml += "<div class='tkanniu2';>";
+   tableHtml += "<button type='submit' style='margin-right:10px;' onclick='gbtc()'>确定</button>";
+   tableHtml += "<button type='submit' onclick='gbtc()' >取消</button>";
+   tableHtml += "</div>";
+   tableHtml += "</ul></div>";
+  $("#dialog_message").html(tableHtml);
+  console.log(1);
+  $('#dialog_message').dialog({    
+    title: '批量导出',    
+    width: 500,    
+    height: 200, 
+    top:200,
+    closed: false,    
+    cache: false,                  
+    modal: true   
+}); 
+}
+
+
+function gbtc(){
+    $('#dialog_message').dialog('close');
+}
+</script>
+<!-- 弹框 -->
+
+
+
     <footer class="app-footer">
          <div style="text-align: center;">
         <a href="#">版权所有：石家庄市公安局</a>
@@ -553,7 +639,7 @@
         
     </footer>
 
-    <script src="js/jquery.min.js"></script>
+   
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="bower_components/pace/pace.min.js"></script>

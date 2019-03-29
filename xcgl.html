@@ -13,10 +13,20 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>薪酬管理</title>
+    <title>石家庄市辅警管理系统</title>
+    
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="easyui.css" /> 
+    <script src="js/jquery.min.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/pace/pace.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript"  src="jquery.easyui.min.js"></script>
 
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -27,7 +37,7 @@
         <ul class="nav navbar-nav ml-auto">
           
             <li class="nav-item hidden-md-down"  style="color: #fff;">
-               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               <span id="mytime"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
@@ -137,7 +147,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <i class="fa fa-align-justify"></i>搜索
-                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">展开搜索项</button>
+                                    <!-- <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">展开搜索项</button> -->
                                 </div>
                                 <div class="card-block">
                              <form action="" method="post" class="form-inline">
@@ -168,13 +178,19 @@
                                         <label style="margin: 0;">时间选择
                                             <select class="btn-primary" style="margin-left: 5px; background-color: #1276e6; background-color: #fff; color: #000; ">
                                                 <option>2018-08</option>
+                                                <option>2018-09</option>
+                                                <option>2018-10</option>
+                                                <option>2018-11</option>
+                                                <option>2018-12</option>
+                                                <option>2019-01</option>
+                                                <option>2019-02</option>
                                                 
-                                            </select><span>&nbsp确定
+                                            </select><span style="cursor:pointer;">&nbsp确定
                                                         
                                                     </span>&nbsp&nbsp&nbsp&nbsp&nbsp
-                                    <button type="submit" class="btn btn-sm btn-primary" style=" background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; ">批量导入</button>
-                                    <button type="submit" class="btn btn-sm btn-primary" style=" background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; ">导出</button>
-                                    <button type="submit" class="btn btn-sm btn-primary" style="background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; ">新增</button>
+                                    
+                                    <button type="submit" class="btn btn-sm btn-primary" style=" background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; " onclick="daochu()">导出</button>
+                                    
                                     </div>
                                 </div>
                                 <div class="card-block">
@@ -190,7 +206,7 @@
                                                 <th>工龄工资</th>
                                                 <th>应发合计</th>
                                                 <th>时间</th>
-                                                <th>操作</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -204,9 +220,7 @@
                                                 <td>400</td>
                                                 <td>3400</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -218,9 +232,7 @@
                                                 <td>300</td>
                                                 <td>3000</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -232,9 +244,7 @@
                                                 <td>300</td>
                                                 <td>3300</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -246,9 +256,7 @@
                                                 <td>400</td>
                                                 <td>3100</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -260,9 +268,7 @@
                                                 <td>300</td>
                                                 <td>3000</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -274,9 +280,7 @@
                                                 <td>500</td>
                                                 <td>3200</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -288,9 +292,7 @@
                                                 <td>400</td>
                                                 <td>3100</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             
                                             <tr>
@@ -303,9 +305,7 @@
                                                 <td>300</td>
                                                 <td>3000</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -317,9 +317,7 @@
                                                 <td>400</td>
                                                 <td>3100</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -331,9 +329,7 @@
                                                 <td>400</td>
                                                 <td>3100</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
@@ -345,9 +341,7 @@
                                                 <td>500</td>
                                                 <td>3200</td>
                                                 <td>2018/08</td>
-                                                <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">详情</button>
-                                                </td>
+                                                
                                             </tr>
                                         </tbody>
                                     </table>
@@ -380,13 +374,74 @@
 
       
         </div>
+
+        <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
+
+
+         <!-- 弹框 -->
+        <div id="dialog_message" style="font-size: 18px;" ></div>
+        <!-- 弹框 -->
+
+        <script>
+
+ function daochu(){
+  $("#dialog_message").html("");//内容先清空
+  var tableHtml = "<div class='jsanniu'><ul>";
+   tableHtml += "<li>确定将选中人员导出到excel？</li>";
+   tableHtml += "<div class='tkanniu2';>";
+   tableHtml += "<button type='submit' style='margin-right:10px;' onclick='gbtc()'>确定</button>";
+   tableHtml += "<button type='submit' onclick='gbtc()' >取消</button>";
+   tableHtml += "</div>";
+   tableHtml += "</ul></div>";
+  $("#dialog_message").html(tableHtml);
+  console.log(1);
+  $('#dialog_message').dialog({    
+    title: '批量导出',    
+    width: 500,    
+    height: 200, 
+    top:200,
+    closed: false,    
+    cache: false,                  
+    modal: true   
+}); 
+}
+
+
+function gbtc(){
+    $('#dialog_message').dialog('close');
+}
+</script>
+<!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
+
+
     <footer class="app-footer">
          <div style="text-align: center;">
         <a href="#">版权所有：石家庄市公安局</a>
         </div>
     </footer>
 
-    <script src="js/jquery.min.js"></script>
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="bower_components/pace/pace.min.js"></script>

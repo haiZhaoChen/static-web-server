@@ -1,7 +1,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,111 +12,36 @@
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
+
     <title>石家庄市辅警管理系统</title>
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="easyui.css" /> 
     <script src="js/jquery.min.js"></script>
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="bower_components/pace/pace.min.js"></script>
     <script src="js/Chart.min.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript"  src="jquery.easyui.min.js"></script>
 
 
-<!-- 弹框 -->
-
-<script type="text/javascript" src="jquery-1.11.1.js"></script>
-<link rel="stylesheet" type="text/css" href="easyui.css" /> 
-<script type="text/javascript"  src="jquery.easyui.min.js"></script>
-<script>
-  function jsanniu(){
-  $("#dialog_message").html("");//内容先清空
-  var tableHtml = "<div class='jsanniu'><ul>";
-  tableHtml += "<li>李泽华-交通警察支队</li>";
-   tableHtml += "<div class='' style='margin-right:45px; '>";
-   tableHtml += "<label for='exampleInputName2' style='margin-right:5px; color:#000; padding-top:20px;'>现在级别</label>";
-   tableHtml += "<input type='text'  value='实习辅警'>";
-   tableHtml += "<span class='input-group-btn'>";
-   tableHtml += "</span>";
-   tableHtml += "</div>";
-  tableHtml += "<div style='margin-right:50px;' >";
-  tableHtml += "<label for='exampleinputemail2'='' style='color:#000; padding-top:20px;'>晋升级别</label>";
-  tableHtml += "<select class='' id='ccmonth' style='margin-left: 5px; width:  157px;'>";
-  tableHtml += "<option>六级辅警</option>";
-  tableHtml += "<option>五级辅警</option>";
-  tableHtml += "<option>四级辅警</option>";
-  tableHtml += "<option>三级辅警</option>";
-  tableHtml += "<option>二级辅警</option>";
-  tableHtml += "<option>一级辅警</option>";
-  tableHtml += "</select>";
-  tableHtml += "<select  id='ccmonth' style='margin-left: 5px; width:100px;'>";
-  tableHtml += "<option>正常晋升</option>";
-  tableHtml += "<option>提前晋升</option>";
-  tableHtml += "<option>延后晋升</option>";
-  tableHtml += "</select>";
-  tableHtml += "</div>";
-
-
-   tableHtml += "<div class='form-group' style='margin-right:45px; '>";
-   tableHtml += "<label for='exampleInputName2' style='margin-right:5px; color:#000; padding-top:20px;'>晋升备注</label>";
-   tableHtml += "<input type='text' class='' id='' placeholder='输入备注'>";
-   tableHtml += "<span class='input-group-btn'>";
-   tableHtml += "</span>";
-   tableHtml += "</div>";
-   tableHtml += "<div class='tkanniu';>";
-   tableHtml += "<button type='submit' style='margin-right:10px;' onclick='gbtc()'>确定</button>";
-   tableHtml += "<button type='submit' onclick='gbtc()' >取消</button>";
-   tableHtml += "</div>";
-   tableHtml += "</ul></div>";
-
-
-
-
-  $("#dialog_message").html(tableHtml);
-  console.log(1);
-  $('#dialog_message').dialog({    
-    title: '晋升',    
-    width: 700,    
-    height: 330, 
-    top:200,
-    closed: false,    
-    cache: false,                  
-    modal: true   
-}); 
-}
-
-
-function jsgj(){
-  $("#dialog_message").html("");//内容先清空
-  var tableHtml = "<div class='datantan'><ul>";
-  tableHtml += "<li>李泽华-交通警察支队</li>";
-  tableHtml += "<li>2008.12.05，实习辅警>晋升至>六级辅警&nbsp&nbsp&nbsp&nbsp备注：工作满一年，且表现优秀</li>";
-  tableHtml += "<li>2011.12.05，六级辅警>晋升至>五级辅警&nbsp&nbsp&nbsp&nbsp备注：工龄满四年，且多次立功</li>";
-  tableHtml += "<li>2015.12.05，五级辅警>晋升至>四级辅警&nbsp&nbsp&nbsp&nbsp备注：工作满八年，为抓捕做贡献</li>";
-
-  tableHtml += "</ul></div>";
-  $("#dialog_message").html(tableHtml);
-  console.log(1);
-  $('#dialog_message').dialog({    
-    title: '晋升轨迹',    
-    width: 700,    
-    height: 300, 
-    top:200,
-    closed: false,    
-    cache: false,                  
-    modal: true   
-}); 
-}
-
-function gbtc(){
-    $('#dialog_message').dialog('close');
-}
-</script>
-<!-- 弹框 -->
     
-
-
+    <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
+    
 
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -159,35 +87,21 @@ function gbtc(){
             </li>
 
         </ul>
-
-
-        <!-- 动态时间 -->
-    <script type="text/javascript">
-        function showTime(){
-            nowtime=new Date();
-            year=nowtime.getFullYear();
-            month=nowtime.getMonth()+1;
-            date=nowtime.getDate();
-            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
-        }
-        setInterval("showTime()",1000);
-    </script>
-    <!-- 动态时间 -->
     </header>
 
     <div class="app-body">
         <div class="sidebar">
             <nav class="sidebar-nav">
-               <ul class="nav" style="font-size: 15px;">
+                <ul class="nav" style="font-size: 15px;">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html"><img style="margin-right: 10px;" src="img/sy.png">首页</a>
                     </li>
 
                    
-                    <li class="nav-item nav-dropdown">
+                    <li class="nav-item">
                         <a class="nav-link" href="rsda.html"><img style="margin-right: 10px;" src="img/rsda.png">人事档案<i><img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
                     </li>
-                    <li class="nav-item nav-dropdown  open">
+                    <li class="nav-item nav-dropdown">
                         <a class="nav-link" href="zwjs.html"><img style="margin-right: 10px;" src="img/zwjs.png">职位晋升<i><img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
                        
                     </li>
@@ -197,7 +111,7 @@ function gbtc(){
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link" href="xcgl.html"><img style="margin-right: 10px;" src="img/xcgl.png">薪酬管理<img src="img/jt.png" class="nav-dropdown-togglee"></i></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item  nav-dropdown open">
                         <a class="nav-link" href="rck.html"><!-- <i class="icon-pie-chart"></i> --><img style="margin-right: 10px;" src="img/rck.png">人才库<img src="img/jt.png" class="nav-dropdown-togglee" style="margin-left: 69px;"></i></a>
                     </li>
                     <li class="divider"></li>
@@ -233,15 +147,15 @@ function gbtc(){
         </div>
         <main class="main">
             <ol class="breadcrumb">
-                
-                <li class="breadcrumb-item"><a href="#">职位晋升</a>
+               
+                <li class="breadcrumb-item"><a href="#">添加人才库</a>
                 </li>
             </ol>
             <div class="container-fluid">
                 <div class="animated fadeIn">
                         </div>
 
- <div class="col-lg-6">
+                            <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header">
                                     <i class="fa fa-align-justify"></i>搜索
@@ -256,7 +170,7 @@ function gbtc(){
                                                         <button type="button" class="btn btn-primary">搜索</button>
                                                     </span>
                                         </div>
-                                        <div class="form-group" style="margin-right:50px; >
+                                        <div class="form-group" style="margin-right:50px;" >
                                             <label for=" exampleinputemail2"="">所属部门</label>
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
                                                 <option>交通警察大队</option>
@@ -268,70 +182,112 @@ function gbtc(){
                                                 <option>刑侦大队</option>
                                             </select>
                                         </div>
-                                        <div class="form-group" style="margin-right:50px; >
-                                            <label for=" exampleinputemail2"="">入职年限
+                                         <div class="form-group" style="margin-right:50px;" >
+                                            <label for=" exampleinputemail2"="">性别</label>
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
-                                                <option>选择</option>
-                                                <option>1年以下</option>
-                                                <option>1-2年</option>
-                                                <option selected>3-5年</option>
-                                                <option>6-8年</option>
-                                                <option>9-15年</option>
-                                                <option>15年以上</option>
-                                               
-                                               
-                                            </select>
+                                                <option>男</option>
+                                                <option>女</option>
+                                             </select>
                                         </div>
-                                        
-                                         <div class="form-group" style="margin-right:50px; ">
-                                            <label for="exampleInputName2" style=" margin-right:5px;">入职日期</label>
+                                        <div class="form-group" style="margin-right:50px; ">
+                                            <label for="exampleInputName2" style=" margin-right:5px;">年龄范围</label>
                                             <input type="text" class="form-control" id="exampleInputName2" style="width: 50px;"><span style="color: #d9d9d9">&nbsp;—&nbsp; </span>
                                              <input type="text" class="form-control" id="exampleInputName2" style="width: 50px;">
                                         </div>
-                                        <div class="form-group" style="margin-right:50px; >
-                                            <label for=" exampleinputemail2"="">是否符合晋升&nbsp
+
+                                        <div class="form-group" style="margin-right:50px; ">
+                                            <label for="exampleInputName2" style=" margin-right:5px;">入职日期</label>
+                                            <input type="text" class="form-control" id="exampleInputName2" style="width: 100px;"> <span style="color: #d9d9d9">&nbsp;—&nbsp; </span>
+                                             <input type="text" class="form-control" id="exampleInputName2" style="width: 100px;">
+                                        </div>
+                                           <div class="form-group" style="margin-right:50px;" >
+                                            <label for=" exampleinputemail2"="">学历
+                                            <select class="form-control" id="ccmonth" style="margin-left: 5px;">
+                                                <option>博士</option>
+                                                <option>硕士</option>
+                                                <option selected="">本科</option>
+                                                <option>大专</option>
+                                                <option>高中</option>
+                                           </select>
+                                        </div>
+                                      
+                                       <br>
+                                        <div class="form-group" style="margin-right:50px; margin-top: 20px;"  >
+                                            <label for=" exampleinputemail2"="">是否退伍军人
                                             <label for="checkbox1">
                                                         <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 15px; height: 15px;">
                                                     </label>
                                         </div>
-                                       
-                                       
-                                       
+                                        <div class="form-group" style="margin-right:50px; margin-top: 20px;" >
+                                            <label for=" exampleinputemail2"="">是否党员
+                                            <label for="checkbox1">
+                                                        <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 15px; height: 15px;">
+                                                    </label>
+                                        </div>
                                         
-                                       
+                                         <div class="form-group" style="margin-right:50px; margin-top: 20px;" >
+                                            <label for=" exampleinputemail2"="">任职区域
+                                            <select class="form-control" id="ccmonth" style="margin-left: 5px;">
+                                                <option>选择</option>
+                                                <option>长安区</option>
+                                                <option>桥西区</option>
+                                                <option>新华区</option>
+                                                <option>裕华区</option>
+                                                <option>鹿泉区</option>
+                                                <option>井陉矿区</option>
+                                                <option>栾城区</option>
+                                                <option>藁城区</option>
+                                            </select>
+                                        </div>
+                                          <div class="form-group" style="margin-right:50px; margin-top: 20px;"  >
+                                            <label for=" exampleinputemail2"="">职位
+                                            <select class="form-control" id="ccmonth" style="margin-left: 5px;">
+                                                <option>选择</option>
+                                                <option>队员</option>
+                                                <option>组长</option>
+                                                <option>班长</option>
+
+                                            </select>
+                                        </div>
+                                          <div class="form-group" style="margin-right:50px;  margin-top: 20px;"  >
+                                            <label for=" exampleinputemail2"="">辅警级别
+                                            <select class="form-control" id="ccmonth" style="margin-left: 5px;">
+                                                <option>实习辅警</option>
+                                                <option selected>六级辅警</option>
+                                                <option>五级辅警</option>
+                                                <option>四级辅警</option>
+                                                <option>三级辅警</option>
+                                                <option>二级辅警</option>
+                                                <option>一级辅警</option>
+                                            </select>
+                                        </div>
+
+                                     
                                    </form>
                         </div>
                             </div>
                         </div>
 
-                          <div class="col-lg-6">
+                      <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> 人员列表
-                                    <div style="float: right;">
-                                        <label style="margin: 0;">批量操作
-                                            <select class="btn-primary" style="margin-left: 5px; background-color: #1276e6; background-color: #fff; color: #000; ">
-                                                <option>选择</option>
-                                                <option>删除</option>
-                                            </select><span style="cursor:pointer;">&nbsp确定
-                                                        
-                                                    </span>
-                                    
-                                    </div>
+                                    <i class="fa fa-align-justify"></i> 人员信息
+                                    <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer" onclick="pljr()">批量添加</button>
                                 </div>
                                 <div class="card-block">
                                     <table class="table table-bordered" style="text-align: center;">
                                         <thead>
                                             <tr>
-                                                <th>选择</th>
-                                                
+                                                <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <th>姓名</th>
+                                                <th>性别</th>
                                                 <th>任职区域</th>
-                                                <th>身份证号</th>
+                                                <th>手机号</th>
                                                 <th>部门</th>
-                                                <!-- <th>职位</th> -->
-                                                <th>级别</th>
-                                                <th>入职日期</th>
+                                                
+                                                <th>出生日期</th>
+                                                <th>特长</th>
+                                                
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
@@ -339,223 +295,229 @@ function gbtc(){
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>杨正华</td>
+                                                <td>男</td>
                                                 <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>130102198812050112</td>
+                                                <td>15632301452</td>
                                                 <td>交通警察大队</td>
-
-                                               <!--  <td>班长</td> -->
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                   
-                                                </td>
-                                                <td>2015/09/20</td>
-                                                
+                                                <td>1989/12/05</td>
                                                 <td>
-                                                    
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                         <button type="submit" class="btn btn-sm btn-primary">播音主持</button>
+                                         
+                                         <button type="reset" class="btn btn-sm btn-success">退伍军人</button>
+                                        
                                                 </td>
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>陈德涛</td>
+                                                <td>男</td>
                                                 <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>130102199003071938</td>
+                                                <td>15332309653</td>
                                                 <td>治安管理大队</td>
-                                                <!-- <td>组长</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2016/11/20</td>
+                                                <td>1989/01/06</td>
                                                 <td>
-                                                     
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                      
+                                         <button type="reset" class="btn btn-sm btn-info">软件程序</button>
                                                 </td>
+                                                
+                                               
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>刘健东</td>
+                                                <td>男</td>
                                                 <td>
                                                     <span class="badge badge-warning" style="background-color: #3696f1;">长安区</span>
                                                 </td>
-                                                <td>130102199207120793</td>
+                                                <td>15632302154</td>
                                                 <td>治安管理大队</td>
-                                                <!-- <td>班长</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2016/08/25</td>
-                                               
+                                                <td>1989/02/07</td>
                                                 <td>
-                                                    <!-- <span class="badge badge-success" style="background-color: #1276e6;">晋升</span> -->
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                        
+                                         <button type="reset" class="btn btn-sm btn-danger">计算机硬件</button>
+                                        
                                                 </td>
+                                                
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>王志刚</td>
-                                                 <td>
+                                                <td>男</td>
+                                                <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>130102198903020919</td>
+                                                <td>15832385048</td>
                                                 <td>交通警察大队</td>
-                                                <!-- <td>队员</td> -->
-                                               
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2015/05/15</td>
-                                               
+                                                
+                                                <td>1989/11/10</td>
                                                 <td>
-                                                    <!-- <span class="badge badge-success" style="background-color: #1276e6;">晋升</span> -->
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                         <button type="submit" class="btn btn-sm btn-primary">播音主持</button>
+                                        
                                                 </td>
+                                                
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>于占国</td>
+                                                <td>男</td>
                                                 <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>130102198701118590</td>
+                                                <td>13332325049</td>
                                                 <td>特巡警大队</td>
-                                                <!-- <td>队员</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2016/11/16</td>
-                                               
+                                                <td>1989/12/05</td>
                                                 <td>
-                                                    <!-- <span class="badge badge-success" style="background-color: #1276e6;">晋升</span> -->
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                     <button type="reset" class="btn btn-sm btn-warning" style="background-color: #f87400; border: 0;">团队管理</button>
+                                         
                                                 </td>
+                                                
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>齐建军</td>
+                                                <td>男</td>
                                                 <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>130105198906093290</td>
+                                                <td>15332309650</td>
                                                 <td>特巡警大队</td>
-                                                <!-- <td>队员</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2014/08/10</td>
-                                               
+                                                <td>1988/10/29</td>
                                                 <td>
-                                                   <!-- <span class="badge badge-success" style="background-color: #1276e6;">晋升</span> -->
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                      
+                                        <button type="reset" class="btn btn-sm btn-warning" style="background-color: #f87400; border: 0;">团队管理</button>
+                                   
                                                 </td>
+                                                
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>赵明亮</td>
+                                                <td>男</td>
                                                 <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>130105199311090779</td>
+                                                <td>15832306351</td>
                                                 <td>刑侦大队</td>
-                                                <!-- <td>队员</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2015/09/22</td>
-                                               
+                                                <td>1988/12/15</td>
                                                 <td>
-                                                    <!-- <span class="badge badge-success" style="background-color: #1276e6;">晋升</span> -->
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                      
+                                         <button type="reset" class="btn btn-sm btn-success">退伍军人</button>
+                                          
                                                 </td>
+                                                
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                             
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>孙倩倩</td>
+                                                <td>女</td>
                                                 <td>
-                                                     <span class="badge badge-warning" style="background-color: #3696f1;">长安区</span>
+                                                    <span class="badge badge-warning" style="background-color: #3696f1;">长安区</span>
                                                 </td>
-                                                <td>130105199112116760</td>
+                                                <td>15332307855</td>
                                                 <td>治安管理大队</td>
-                                                <!-- <td>队员</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2016/08/23</td>
-                                               
+                                                <td>1989/12/05</td>
                                                 <td>
-                                                   <!-- <span class="badge badge-success" style="background-color: #1276e6;">晋升</span> -->
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                       
+                                         <button type="reset" class="btn btn-sm btn-danger">计算机硬件</button>
+                                       
+                                        
                                                 </td>
+                                                
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>王凯瑞</td>
-                                                 <td>
+                                                <td>男</td>
+                                                <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>130105198901120597</td>
+                                                <td>15832305556</td>
                                                 <td>特巡警大队</td>
-                                                <!-- <td>队员</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2015/10/28</td>
-                                                
+                                                <td>1987/12/20</td>
                                                 <td>
-                                                    <!-- <span class="badge badge-success" style="background-color: #1276e6;">晋升</span> -->
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                         <button type="submit" class="btn btn-sm btn-primary">播音主持</button>
+                                         
                                                 </td>
+                                               
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #999; border: 0; border-radius: 3px; color: #fff; " >已存在</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>王明刚</td>
+                                                <td>男</td>
                                                 <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>130105199008050612</td>
+                                                <td>15832306696</td>
                                                 <td>刑侦大队</td>
-                                                <!-- <td>队员</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                   
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2015/09/22</td>
-                                                
+                                                <td>1991/10/05</td>
                                                 <td>
-                                                    <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                    
+                                         <button type="reset" class="btn btn-sm btn-info">软件程序</button>
                                                 </td>
+                                               
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #999; border: 0; border-radius: 3px; color: #fff; " >已存在</button>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td><input type="checkbox" id="checkbox1" name="checkbox1" value="option1" style="width: 14px; height: 14px;"></td>
                                                 <td>张泽红</td>
+                                                <td>女</td>
                                                 <td>
                                                      <span class="badge badge-warning" style="background-color: #3696f1;">长安区</span>
                                                 </td>
-                                                <td>130107198703073160</td>
+                                                <td>15832303358</td>
                                                 <td>交通警察大队</td>
-                                                <!-- <td>组长</td> -->
                                                 
-                                                <td>五级辅警&nbsp&nbsp&nbsp
-                                                    <span class="badge badge-danger" style="cursor: pointer;" onclick="jsgj()">晋升轨迹</span>
-                                                </td>
-                                                <td>2014/11/27</td>
-                                                
+                                                <td>1992/04/02</td>
                                                 <td>
-                                                    <!-- <span class="badge badge-success" style="background-color: #1276e6;">晋升</span> -->
-                                                     <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; "onclick="jsanniu()">晋升</button>
+                                        
+                                         <button type="reset" class="btn btn-sm btn-warning" style="background-color: #f87400; border: 0;">团队管理</button>
+                                        
                                                 </td>
+                                                <td>
+                                                   <button type="submit" class="" style="background-color: #1276e6; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="jr()">加入</button>
+                                               </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -582,30 +544,89 @@ function gbtc(){
                 </div>
 
             </div>
-        
+         
         </main>
 
+        
         </div>
 
-<div id="wrapper">
 
-    
-</div>
+        <!-- 弹框 -->
+        <div id="dialog_message" style="font-size: 18px;" ></div>
+        <!-- 弹框 -->
+
+<script>
+
+ function pljr(){
+  $("#dialog_message").html("");//内容先清空
+  var tableHtml = "<div class='jsanniu'><ul>";
+   tableHtml += "<li>确定将选中人员加入人才库？</li>";
+   tableHtml += "<div class='tkanniu2';>";
+   tableHtml += "<button type='submit' style='margin-right:10px;' onclick='gbtc()'>确定</button>";
+   tableHtml += "<button type='submit' onclick='gbtc()' >取消</button>";
+   tableHtml += "</div>";
+   tableHtml += "</ul></div>";
+  $("#dialog_message").html(tableHtml);
+  console.log(1);
+  $('#dialog_message').dialog({    
+    title: '批量添加',    
+    width: 500,    
+    height: 200, 
+    top:200,
+    closed: false,    
+    cache: false,                  
+    modal: true   
+}); 
+}
+
+
+ function jr(){
+  $("#dialog_message").html("");//内容先清空
+  var tableHtml = "<div class='jsanniu'><ul>";
+   tableHtml += "<li>确定加入人才库？</li>";
+   tableHtml += "<div class='tkanniu2';>";
+   tableHtml += "<button type='submit' style='margin-right:10px;' onclick='gbtc()'>确定</button>";
+   tableHtml += "<button type='submit' onclick='gbtc()' >取消</button>";
+   tableHtml += "</div>";
+   tableHtml += "</ul></div>";
+  $("#dialog_message").html(tableHtml);
+  console.log(1);
+  $('#dialog_message').dialog({    
+    title: '添加人才库',    
+    width: 500,    
+    height: 200, 
+    top:200,
+    closed: false,    
+    cache: false,                  
+    modal: true   
+}); 
+}
+
+
+function gbtc(){
+    $('#dialog_message').dialog('close');
+}
+</script>
 <!-- 弹框 -->
-<div id="dialog_message" style="font-size: 18px;" ></div>
-<!-- 弹框 -->
+
+
+
     <footer class="app-footer">
-        <div style="text-align: center;">
+         <div style="text-align: center;">
         <a href="#">版权所有：石家庄市公安局</a>
         </div>
+        
     </footer>
 
-
+   
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="bower_components/pace/pace.min.js"></script>
     <script src="js/Chart.min.js"></script>
     <script src="js/app.js"></script>
+
+
+
 </body>
 
 </html>

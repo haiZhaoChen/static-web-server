@@ -13,7 +13,19 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>家庭成员</title>
+    <title>石家庄市辅警管理系统</title>
+    <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style9.css" rel="stylesheet">
@@ -28,7 +40,7 @@
         <ul class="nav navbar-nav ml-auto">
            
             <li class="nav-item hidden-md-down"  style="color: #fff;">
-               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               <span id="mytime"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">

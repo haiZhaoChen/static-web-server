@@ -11,7 +11,19 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>数据分析</title>
+    <title>石家庄市辅警管理系统</title>
+    <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -24,7 +36,7 @@
         <a class="navbar-brand" href="#"></a>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item hidden-md-down"  style="color: #fff;">
-               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               <span id="mytime"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
@@ -144,12 +156,17 @@
                                                 <option>裕华区</option>
                                                 <option>桥西区</option>
                                                 <option>长安区</option>
+                                                <option>鹿泉区</option>
+                                                <option>栾城区</option>
+                                                <option>井陉矿区</option>
+                                                <option>藁城区</option>
+
                                                
                                             </select>
                                         </div>
                                        
                                        
-                                       <button type="submit" class="btn btn-sm btn-primary" style="padding: 7px 10px; margin-right: 10px;">部门人数占比&nbsp<i class="iconx-close"></i>
+                                       <button type="reset" class="btn btn-sm btn-primary" style="padding: 7px 10px; margin-right: 10px;">部门人数占比&nbsp<i class="iconx-close"></i>
                                        </button>
                                        <button type="reset" class="btn btn-sm btn-success" style="padding: 7px 10px; margin-right: 10px; background-color: #f87400; border-color: #f87400;">特长人数&nbsp<i class="iconx-close"></i></button>
                                        <button type="reset" class="btn btn-sm btn-info" style="padding: 7px 10px; margin-right: 10px;">各区人数&nbsp<i class="iconx-close"></i></button>
@@ -161,9 +178,23 @@
                                             <label for=" exampleinputemail2"="">添加统计项目
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
                                                 <option>选择统计项目</option>
+                                                <option>人员总量</option>
+                                                <option>学历占比</option>
+                                                <option>年龄占比</option>
+                                                <option>工龄占比</option>
+                                                <option>退伍军人占比</option>
+                                                <option>政治面貌</option>
+                                                <option>性别占比</option>
+                                                <option>辅警等级</option>
+                                                <option>部门人数占比</option>
+                                                <option>特长人数</option>
+                                                <option>各区人数</option>
+                                                <option>人员增减</option>
+                                                <option>人员表彰排名</option>
+                                                <option>各区表彰总排名</option>
                                                
                                                
-                                            </select><button style="height: 35px; width: 60px; margin-left: 5px;">添加</button>
+                                            </select><button type="reset" style="height: 35px; width: 60px; margin-left: 5px;">添加</button>
                                         </div>
                                    </form>
                         </div>
@@ -385,9 +416,18 @@
                             <div class="card">
                                 <div class="card-header">
                                     人员增减曲线
+                                    <div style="float: right;">
+                                        <label style="margin: 0;">时间选择
+                                            <input class="btn-primary" style="padding-left: 5px;  background-color: #fff; color: #000; border: 0; width: 70px; outline: none; " value="2018-07" >
+                                            <span style=" color: #999;">&nbsp;—</span>
+                                            <input class="btn-primary" style="padding-left: 5px;  background-color: #fff; color: #000; border: 0;  width: 70px; outline: none;" value="2019-02">
+                                            <span style="cursor:pointer;">&nbsp;确定</span>
+                                            
+                                        </div>
                                   
                                     </label>
                                 </div>
+
                                 <div class="card-block" style="height: 340px;">
                                     
                             <div id="ryzj" style="width: 96%;height:280px;"></div>
@@ -421,7 +461,7 @@ xAxis : [
             interval:0,  
             rotate:40  
             }  ,
-    data : ['2018-4', '2018-5', '2018-6', '2018-7', '2018-8', '2018-9', '2018-10', '2018-11'],
+    data : ['2018-07', '2018-08', '2018-09', '2018-10', '2018-11', '2018-12', '2019-01', '2019-02'],
     axisTick: {
         alignWithLabel: true
     }
@@ -474,7 +514,21 @@ myChart.setOption(option);
                             <div class="card">
                                 <div class="card-header">
                                     人员表彰排名
-                                   
+                                    <div style="float: right;">
+                                     <select class="btn-primary" style="margin-left: 5px; border: 0; background-color: #1276e6; background-color: #fff; color: #000; ">
+                                        <option>2018-08</option>
+                                        <option>2018-09</option>
+                                        <option>2018-10</option>
+                                        <option>2018-11</option>
+                                        <option>2018-12</option>
+                                        <option>2019-01</option>
+                                        <option selected>2019-02</option>
+
+                                    </select>
+                                    <span style="cursor:pointer;">&nbsp;确定
+
+                                    </span>
+                                </div>
                                 </div>
                                 <div class="card-block" style="height: 340px;">
                                    
@@ -553,6 +607,21 @@ myChart.setOption(option);
                             <div class="card">
                                 <div class="card-header">
                                     各区人员表彰总排名
+                                     <div style="float: right;">
+                                     <select class="btn-primary" style="margin-left: 5px; border: 0; background-color: #1276e6; background-color: #fff; color: #000; ">
+                                        <option>2018-08</option>
+                                        <option>2018-09</option>
+                                        <option>2018-10</option>
+                                        <option>2018-11</option>
+                                        <option>2018-12</option>
+                                        <option>2019-01</option>
+                                        <option selected>2019-02</option>
+
+                                    </select>
+                                    <span style="cursor:pointer;">&nbsp;确定
+
+                                    </span>
+                                </div>
                                 </div>
                                 <div class="card-block" style="height: 340px;">
                                     <div id="gqrybzzpm" style="width: 96%;height:280px;"></div>

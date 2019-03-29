@@ -9,7 +9,19 @@
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>人事档案</title>
+    <title>石家庄市辅警管理系统</title>
+    <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -20,7 +32,7 @@
         <a class="navbar-brand" href="#"></a>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item hidden-md-down"  style="color: #fff;">
-               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               <span id="mytime"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
@@ -121,7 +133,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <i class="fa fa-align-justify"></i>搜索
-                                     <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">展开搜索项</button>
+                                     <!-- <button type="submit" class="btn btn-sm btn-primary" style="float: right; background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer">展开搜索项</button> -->
                                 </div>
                                 <div class="card-block">
                              <form action="" method="post" class="form-inline">
@@ -145,6 +157,8 @@
                                             <label for=" exampleinputemail2"="">操作人
                                             <select class="form-control" id="ccmonth" style="margin-left: 5px;">
                                                 <option>选择操作人</option>
+                                                <option>刘兆强</option>
+                                                <option>赵志坚</option>
                                               
                                              </select>
                                         </div>
@@ -183,7 +197,7 @@
                                                 <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp08:10:23</td>
+                                                <td>2018/09/18&nbsp&nbsp&nbsp08:25:23</td>
                                                 <td>登录辅警管理系统</td>
                                                 <td></td>
                                             </tr>
@@ -201,7 +215,7 @@
                                                 <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp08:20:11</td>
+                                                <td>2018/09/16&nbsp&nbsp&nbsp08:20:11</td>
                                                 <td>添加人员-谢文泽-行政服务部</td>
                                                 <td></td>
                                             </tr>
@@ -210,7 +224,7 @@
                                                   <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp09:15:25</td>
+                                                <td>2018/09/15&nbsp&nbsp&nbsp09:15:25</td>
                                                 <td>登录辅警管理系统</td>
                                                 <td></td>
                                             </tr>
@@ -219,7 +233,7 @@
                                                 <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp09:18:44</td>
+                                                <td>2018/09/12&nbsp&nbsp&nbsp09:18:44</td>
                                                 <td>行政服务部-谢文泽&nbsp手机号15933652120变更为：【18833306660】&nbsp</td>
                                                 <td></td>
                                             </tr>
@@ -228,7 +242,7 @@
                                                   <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp09:20:52</td>
+                                                <td>2018/09/10&nbsp&nbsp&nbsp09:20:52</td>
                                                 <td>登录辅警管理系统</td>
                                                 <td></td>
                                             </tr>
@@ -237,7 +251,7 @@
                                                 <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp10:50:32</td>
+                                                <td>2018/08/22&nbsp&nbsp&nbsp10:50:32</td>
                                                 <td>添加人员-谢文泽-行政服务部</td>
                                                 <td></td>
                                             </tr>
@@ -246,7 +260,7 @@
                                                 <td>
                                                     <span class="badge badge-danger">新华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp13:20:05</td>
+                                                <td>2018/08/18&nbsp&nbsp&nbsp13:20:05</td>
                                                 <td>行政服务部-刘建军&nbsp修改姓名为【刘健军】</td>
                                                 <td></td>
                                             </tr>
@@ -255,7 +269,7 @@
                                                   <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp13:30:40</td>
+                                                <td>2018/08/10&nbsp&nbsp&nbsp13:30:40</td>
                                                 <td>登录辅警管理系统</td>
                                                 <td></td>
                                             </tr>
@@ -264,7 +278,7 @@
                                                   <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp13:35:22</td>
+                                                <td>2018/07/28&nbsp&nbsp&nbsp13:35:22</td>
                                                 <td>登录辅警管理系统</td>
                                                 <td></td>
                                             </tr>
@@ -273,7 +287,7 @@
                                                   <td>
                                                     <span class="badge badge-success">裕华区</span>
                                                 </td>
-                                                <td>2018/09/18&nbsp&nbsp&nbsp13:38:30</td>
+                                                <td>2018/07/23&nbsp&nbsp&nbsp13:38:30</td>
                                                 <td>交通警察支队-张伟强&nbsp由群众变更为【党员】</td>
                                                 <td></td>
                                             </tr>

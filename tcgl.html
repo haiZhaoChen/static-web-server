@@ -13,10 +13,21 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>人事档案</title>
+    <title>石家庄市辅警管理系统</title>
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="easyui.css" /> 
+    <script src="js/jquery.min.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/pace/pace.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript"  src="jquery.easyui.min.js"></script>
+    
+
 
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -27,7 +38,7 @@
         <ul class="nav navbar-nav ml-auto">
            
             <li class="nav-item hidden-md-down"  style="color: #fff;">
-               2019/03/14 &nbsp&nbsp&nbsp上午9:39&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               <span id="mytime"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
@@ -143,11 +154,11 @@
                                             <select class="btn-primary" style="margin-left: 5px; background-color: #1276e6; background-color: #fff; color: #000; ">
                                                 <option>选择</option>
                                                 <option>删除</option>
-                                            </select><span>&nbsp确定
+                                            </select><span style="cursor:pointer;">&nbsp确定
                                                         
                                                     </span>&nbsp&nbsp&nbsp&nbsp&nbsp
                                     
-                                    <button type="submit" class="btn btn-sm btn-primary" style="background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; ">新增</button>
+                                    <button type="submit" class="btn btn-sm btn-primary" style="background-color: #1276e6; border: 0; border-radius: 3px; cursor:pointer; " onclick="xinzeng()">新增</button>
                                     </div>
                                 </div>
                                 <div class="card-block">
@@ -155,7 +166,7 @@
                                         <thead>
                                             <tr>
                                                 <th>选择</th>
-                                                <th>职位</th>
+                                                <th>特长</th>
                                                 <th>排序</th>
                                                 <th>操作</th>
                                             </tr>
@@ -166,8 +177,8 @@
                                                 <td>退伍军人</td>
                                                 <td>1</td>
                                                 <td>
-                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -175,8 +186,8 @@
                                                 <td>团队管理</td>
                                                 <td>2</td>
                                                 <td>
-                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -184,8 +195,8 @@
                                                 <td>播音主持</td>
                                                 <td>3</td>
                                                 <td>
-                                                     <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -193,8 +204,8 @@
                                                 <td>诗歌朗诵</td>
                                                 <td>4</td>
                                                 <td>
-                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -202,8 +213,8 @@
                                                 <td>计算机程序</td>
                                                 <td>5</td>
                                                 <td>
-                                                     <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -211,8 +222,8 @@
                                                 <td>电脑硬件</td>
                                                 <td>6</td>
                                                 <td>
-                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -220,8 +231,8 @@
                                                 <td>才艺表演</td>
                                                 <td>7</td>
                                                 <td>
-                                                     <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -229,8 +240,8 @@
                                                 <td>擅长快跑</td>
                                                 <td>8</td>
                                                 <td>
-                                                     <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -238,8 +249,8 @@
                                                 <td>熟练掌握办公软件</td>
                                                 <td>9</td>
                                                 <td>
-                                                     <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -247,8 +258,8 @@
                                                 <td>责任心强，工作细心</td>
                                                 <td>10</td>
                                                 <td>
-                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -256,8 +267,8 @@
                                                 <td>才艺表演</td>
                                                 <td>11</td>
                                                 <td>
-                                                     <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">编辑</button>
-                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="window.location.href='#'">删除</button>
+                                                    <button  type="submit"  style="background-color: #4dbd74; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="bianji()">编辑</button>
+                                                    <button  type="submit"  style="background-color: #f86c6b; border: 0; border-radius: 3px; color: #fff; cursor:pointer; " onclick="shanchu()">删除</button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -290,20 +301,139 @@
 
       
         </div>
+
+        <!-- 弹框 -->
+        <div id="dialog_message" style="font-size: 18px;" ></div>
+        <!-- 弹框 -->
+
+
+    <!-- 动态时间 -->
+    <script type="text/javascript">
+        function showTime(){
+            nowtime=new Date();
+            year=nowtime.getFullYear();
+            month=nowtime.getMonth()+1;
+            date=nowtime.getDate();
+            document.getElementById("mytime").innerText=year+"年"+month+"月"+date+"    "+nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()",1000);
+    </script>
+    <!-- 动态时间 -->
+
+
+
+<script>
+  function bianji(){
+  $("#dialog_message").html("");//内容先清空
+  var tableHtml = "<div class='jsanniu'><ul>";
+
+   tableHtml += "<div class='' style='margin-right:45px; '>";
+   tableHtml += "<label for='exampleInputName2' style='margin-right:5px; color:#000; padding-top:20px;'>部门</label>";
+   tableHtml += "<input type='text'  value='退伍军人'>";
+   tableHtml += "<span class='input-group-btn'>";
+   tableHtml += "</span>";
+   tableHtml += "</div>";
+   tableHtml += "<div class='form-group' style='margin-right:45px; '>";
+   tableHtml += "<label for='exampleInputName2' style='margin-right:5px; color:#000; padding-top:20px;'>排序</label>";
+   tableHtml += "<input type='text'  value='1'>";
+   tableHtml += "<span class='input-group-btn'>";
+   tableHtml += "</span>";
+   tableHtml += "</div>";
+   tableHtml += "<div class='tkanniu2'>";
+   tableHtml += "<button type='submit' style='margin-right:10px;' onclick='gbtc()'>确定</button>";
+   tableHtml += "<button type='submit' onclick='gbtc()' >取消</button>";
+   tableHtml += "</div>";
+   tableHtml += "</ul></div>";
+
+
+
+
+  $("#dialog_message").html(tableHtml);
+  console.log(1);
+  $('#dialog_message').dialog({    
+    title: '特长编辑',    
+    width: 500,    
+    height: 280, 
+    top:200,
+    closed: false,    
+    cache: false,                  
+    modal: true   
+}); 
+}
+
+function xinzeng(){
+  $("#dialog_message").html("");//内容先清空
+  var tableHtml = "<div class='jsanniu'><ul>";
+
+   tableHtml += "<div class='' style='margin-right:45px; '>";
+   tableHtml += "<label for='exampleInputName2' style='margin-right:5px; color:#000; padding-top:20px;'>特长</label>";
+   tableHtml += "<input type='text'  placeholder='输入特长'>";
+   tableHtml += "<span class='input-group-btn'>";
+   tableHtml += "</span>";
+   tableHtml += "</div>";
+   tableHtml += "<div class='' style='margin-right:45px; '>";
+   tableHtml += "<label for='exampleInputName2' style='margin-right:5px; color:#000; padding-top:20px;'>排序</label>";
+   tableHtml += "<input type='text'  placeholder='输入排序'>";
+   tableHtml += "<span class='input-group-btn'>";
+   tableHtml += "</span>";
+   tableHtml += "</div>";
+   tableHtml += "<div class='tkanniu2'>";
+   tableHtml += "<button type='submit' style='margin-right:10px;' onclick='gbtc()'>新增</button>";
+   tableHtml += "<button type='submit' onclick='gbtc()' >取消</button>";
+   tableHtml += "</div>";
+   tableHtml += "</ul></div>";
+
+
+
+
+  $("#dialog_message").html(tableHtml);
+  console.log(1);
+  $('#dialog_message').dialog({    
+    title: '新增特长',    
+    width: 500,    
+    height: 260, 
+    top:200,
+    closed: false,    
+    cache: false,                  
+    modal: true   
+}); 
+}
+
+ function shanchu(){
+  $("#dialog_message").html("");//内容先清空
+  var tableHtml = "<div class='jsanniu'><ul>";
+   tableHtml += "<li>确定删除特长“退伍军人”？</li>";
+   tableHtml += "<div class='tkanniu2';>";
+   tableHtml += "<button type='submit' style='margin-right:10px;' onclick='gbtc()'>确定</button>";
+   tableHtml += "<button type='submit' onclick='gbtc()' >取消</button>";
+   tableHtml += "</div>";
+   tableHtml += "</ul></div>";
+  $("#dialog_message").html(tableHtml);
+  console.log(1);
+  $('#dialog_message').dialog({    
+    title: '特长删除',    
+    width: 500,    
+    height: 200, 
+    top:200,
+    closed: false,    
+    cache: false,                  
+    modal: true   
+}); 
+}
+
+
+function gbtc(){
+    $('#dialog_message').dialog('close');
+}
+</script>
+<!-- 弹框 -->
+
+
     <footer class="app-footer">
         <div style="text-align: center;">
         <a href="#">版权所有：石家庄市公安局</a>
         </div>
     </footer>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="bower_components/tether/dist/js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="bower_components/pace/pace.min.js"></script>
-    <script src="js/Chart.min.js"></script>
-    <script src="js/app.js"></script>
-
-
 
 </body>
 
